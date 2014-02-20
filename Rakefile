@@ -11,4 +11,7 @@ end
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = 'EvernoteTutorialWithRubyMotion'
+  app.pods do
+    pod 'Evernote-SDK-iOS'
+  end
 end
