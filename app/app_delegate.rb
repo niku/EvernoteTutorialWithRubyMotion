@@ -8,4 +8,13 @@ class AppDelegate
 
     true
   end
+
+  def application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+    NSStrinng.stringWithFormat("en-%@", EvernoteSession.sharedSession.consumerKey).isEqualToString(url.scheme) &&
+      EvernoteSession.sharedSession.canHandleOpenURL(url)
+  end
+
+  def applicationDidBecomeActive(application)
+    EvernoteSession.sharedSession.handleDidBecomeActive
+  end
 end
