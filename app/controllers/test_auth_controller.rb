@@ -16,13 +16,11 @@ class TestAuthController < UIViewController
 
     session.authenticateWithViewController(self,
                                            completionHandler: -> error {
-                                             if (error || !session.isAuthenticated)
-                                               if (error)
-                                                 NSLog("Error authenticating with Evernote Cloud API: %@", error)
-                                               end
-                                               if (!session.isAuthenticated)
-                                                 NSLog("Session not authenticated")
-                                               end
+                                             case
+                                             when error
+                                               NSLog("Error authenticating with Evernote Cloud API: %@", error)
+                                             when !session.isAuthenticated
+                                               NSLog("Session not authenticated")
                                              else
                                                # We're authenticated!
                                                userStore = EvernoteUserStore.userStore
