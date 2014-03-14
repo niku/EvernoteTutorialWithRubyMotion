@@ -6,6 +6,9 @@ class AppDelegate
 
     EvernoteSession.setSharedSessionHost(evernote_host, consumerKey: consumer_key, consumerSecret: consumer_secret)
 
+    @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
+    @window.makeKeyAndVisible
+    @window.rootViewController = TestAuthController.alloc.initWithNibName(nil, bundle: nil)
     true
   end
 
