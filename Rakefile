@@ -14,4 +14,5 @@ Motion::Project::App.setup do |app|
   app.pods do
     pod 'Evernote-SDK-iOS'
   end
+  app.my_env.file = './config/environment.yaml'
 end

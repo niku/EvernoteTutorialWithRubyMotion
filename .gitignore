@@ -16,3 +16,4 @@ nbproject
 .idea
 vendor/bundle
 vendor/Pods
+config/environment.yaml
